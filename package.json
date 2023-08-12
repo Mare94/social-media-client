@@ -9,15 +9,18 @@
     "start": "sass --watch src/scss:dist/css & live-server",
     "test": "node src/**/*.js",
     "format": "prettier -w src/**/*.js",
-    "lint": "eslint src/**/*.js"
+    "lint": "eslint src/**/*.js",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.47.0",
-    "prettier": "^3.0.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
     "live-server": "^1.2.2",
+    "prettier": "^3.0.1",
     "sass": "^1.54.8"
   },
   "dependencies": {
@@ -26,7 +29,8 @@
   "lint-staged": {
     "*.js": [
       "prettier --write",
-      "eslint --fix"
+      "eslint --fix",
+      "eslint --cache --fix"
     ],
     "*.html": [
       "prettier --write"
